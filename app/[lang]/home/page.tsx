@@ -3,7 +3,7 @@ import {Locale} from '@/i18n/i18n-config';
 import {PropsWithChildren} from "react";
 import LocaleSwitcher from "../components/locale-switcher";
 
-export default async function HomePage({params: {lang},}: PropsWithChildren<{
+export async function HomePage({params: {lang},}: PropsWithChildren<{
   params: { lang: Locale };
 }>) {
   const dictionary = await getDictionary(lang);
