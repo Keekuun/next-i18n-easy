@@ -2,12 +2,9 @@ import {getDictionary} from "@/i18n/get-dictionary";
 import {Locale} from '@/i18n/i18n-config';
 import Counter from "./components/counter";
 import LocaleSwitcher from "./components/locale-switcher";
-import {PropsWithChildren} from "react";
 import {ArrowRightIcon} from "@heroicons/react/24/outline";
 
-export default async function IndexPage({params: {lang},}: PropsWithChildren<{
-  params: { lang: Locale };
-}>) {
+export default async function IndexPage({params: {lang},}: {params: {lang: Locale}}) {
   const dictionary = await getDictionary(lang);
 
   return (
